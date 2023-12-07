@@ -12,7 +12,7 @@
       </button>
     
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ms-auto ">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link mx-2 active" aria-current="page" href="#">Home</a>
           </li>
@@ -31,7 +31,7 @@
               <li><a class="dropdown-item" href="{{route('reg-page')}}">Register</a></li>
               <li><a class="dropdown-item" href="{{route('login-page')}}">Login</a></li>
               @else
-              <li>  <a class="dropdown-item"> User: {{$user_name}} </a> </li>
+              <li>  <a class="dropdown-item" href="#"> User: {{$user_name}} </a> </li>
               <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
               <li><a class="dropdown-item" href="#">Setting</a></li>
               @endguest

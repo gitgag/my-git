@@ -2,30 +2,32 @@
     @section('title', 'Sign In')
 <x-admin.admin-nav />
 
-<section >
+<section>
   <div class="container-fluid h-custom">
-    <div class="row d-flex justify-content-center align-items-center p-3 border">
+    <div class="row d-flex justify-content-center align-items-center p-3">
   
-      <div class="col-md-8 col-lg-6 col-xl-4 pt-5">
+      <div class="col-md-8 col-lg-6 col-xl-4 pt-5 border">
         <form method="POST" action="{{route('login')}}">
           @csrf
-          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+          <div class="container-md p-2 text-center">
             <p class="lead fw-normal mb-0 me-3">Sign in with</p>
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-              <i class="fa fa-facebook-f"></i>
+</div>
+        <div class="container-md p-2 text-center">
+            <button type="button" class="btn btn-facebook btn-floating mx-1">
+              <i class="fab fa-facebook-f"></i> 
+              via facebook
             </button>
-
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-              <i class="fa fa-twitter"></i>
-            </button>
-
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-              <i class="fa fa-linkedin"></i>
+          
+            <button type="button" class="btn btn-twitter btn-floating mx-1">
+              <i class="fab fa-twitter"></i>
+              via twitter
             </button>
           </div>
 
-          <div class="divider d-flex align-items-center my-4">
-            <p class="text-center fw-bold mx-3 mb-0">Or</p>
+          <div class="container-md">
+            <p class="divider-text fw-bold">
+          <span class="bg-light"> OR  </span>
+            </p>
           </div>
 
           <!-- Email input -->
@@ -60,8 +62,7 @@
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2">
-            <button type="submit" class="btn btn-primary btn-lg"
-              style="height:50px; width: 120px;" id="loginbtn" 
+            <button type="submit" class="btn btn-primary btn-lg submit-btn" id="loginbtn" 
               onclick="progress(); this.disabled=true; this.form.submit(); ">Login
               
             </button>

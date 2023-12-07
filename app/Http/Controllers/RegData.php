@@ -18,14 +18,15 @@ class RegData extends Controller
        
         $regdata = $req->validate ([
             'name' => 'required',
-            'email' => 'required | email',
+            'email' => 'required | email | unique:users,email',
             'password' => 'required',
+           
         ]);
         User::create ([
             'name' => $regdata['name'],
             'email' => $regdata['email'],
             'password' => $regdata['password']
         ]);
-        return redirect('/register')->with('status','registered successfully');
+        return redirect()->route('reg-page')->with('status','registered successfully. account is being reviewed');
     }
 }

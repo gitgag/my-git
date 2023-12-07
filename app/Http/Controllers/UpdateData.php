@@ -42,14 +42,14 @@ class UpdateData extends Controller
         $cname = $request->input('com_name');
         $cdesc = $request->input('com_desc');
         $caddress= $request->input('com_add');
-        $cphone= $request->input('com_phone');
+        $cphone= $request->input('com_contact');
         $cemail= $request->input('com_email');
         
 
 
        $imgFile= $request->input('main_logo');
        $imgName = time().'.'. $imgFile;
-        dd ($imgName);
+      /*  dd ($imgName); */
 
        /* $fields = $request->validate ([
             'vision_title' => 'required',

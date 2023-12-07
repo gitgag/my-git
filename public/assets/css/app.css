@@ -28,3 +28,8 @@
     background-color: #42AEEC;
     color: #fff;
 }
+
+.submit-btn {
+    height:50px; 
+    width: 150px;
+}

@@ -4,6 +4,11 @@
 
 
 <div class="card bg-white">
+    @if (session('status'))
+    <div class="alert alert-success">
+        {{session('status')}}
+</div>
+@endif
 <article class="card-body mx-auto" style="max-width: 400px;">
 	<h4 class="card-title mt-3 text-center">Create Account</h4>
 	<p class="text-center">Get started with your free account</p>
@@ -16,42 +21,43 @@
     </p>
 	<form method="POST" action="{{route('post-reg')}}">
         @csrf
-	<div class="form-group input-group">
-		<div class="input-group-prepend">
+
+	<div class="input-group mb-3">
+	
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-		 </div>
+		 
         <input name="name" class="form-control" placeholder="Full name" type="text">
 
     </div> 
     @error('name')
         <p class="text text-danger">{{$message}} </p>
         @enderror
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
+    <div class="input-group mb-3">
 		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-		 </div>
         <input name="email" class="form-control" placeholder="Email address" type="text">
     </div> 
     @error('email')
         <p class="text text-danger">{{$message}} </p>
         @enderror
 
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
+    <div class="input-group mb-3">	
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		</div>
-        <input class="form-control" placeholder="Create password" type="password">
+
+        <input class="form-control" placeholder="Create password" type="password" name="password">
     </div> 
-    <div class="form-group input-group">
-    	<div class="input-group-prepend">
+    @error('password')
+    <p class="text text-danger">{{$message}} </p>
+    @enderror
+    <div class="input-group mb-3">
+    	
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		</div>
-        <input class="form-control" placeholder="Repeat password" type="password">
+		
+        <input class="form-control" placeholder="Repeat password" type="password"- name="repeat">
     </div>                                     
     <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+        <button type="submit" class="btn btn-primary btn-block submit-btn" id="loginbtn" onclick="progress(); this.disabled=true; this.form.submit();"> Create Account  </button>
     </div>  
-    <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
+    <p class="text-center">Have an account? <a href="{{route('login-page')}}">Log In</a> </p>                                                                 
 </form>
 </article>
 </div> 
